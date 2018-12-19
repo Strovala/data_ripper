@@ -1,0 +1,13 @@
+body {
+    margin: 0 auto;
+    max-width: 56em;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.item {
+    height: 10vh;
+    width: 20vw;
+    font-size: 32px;
+    margin: 2vh auto
+}
