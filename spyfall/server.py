@@ -19,7 +19,7 @@ def index():
 
 
 @app.route('/locations')
-def locations():
+def locations_list():
     locations = get_locations()
     return jsonify({"locations": locations})
 
@@ -61,7 +61,8 @@ def start():
             "role",
             {
                 "name": player.name,
-                "location": player.role
+                "location": player.role,
+                "locations": locations
             },
             room=player.sid
         )

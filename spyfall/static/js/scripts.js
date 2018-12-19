@@ -1,4 +1,4 @@
-var socket
+var socket;
 function join() {
     var nickname = document.getElementById("nickname").value;
     console.log(nickname);
@@ -11,6 +11,7 @@ function join() {
         $("#login").hide();
         $("#before").show();
         $("#start").show();
+        $("#locations").empty();
         $("#names").empty();
         for (var i = 0; i < names.length; i++) {
             var name = names[i];
@@ -20,9 +21,17 @@ function join() {
     socket.on('role', function (data) {
         var name = data.name;
         var location = data.location;
+        var locations = data.locations;
+        console.log(data)
         $("#login").hide();
         $("#before").hide();
         $("#names").empty();
+        $("#locations").empty();
+        for (var i = 0; i < locations.length; i++) {
+            var location = locations[i];
+            $("#locations").append("<p>" + location + "</p>");
+        }
+
         $("#start").show();
         $("#name").text(name);
         $("#location").text(location);
