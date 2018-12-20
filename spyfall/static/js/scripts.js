@@ -28,7 +28,7 @@ function join() {
         $("#names").empty();
         $("#locations").empty();
         for (var i = 0; i < locations.length; i++) {
-            var location = locations[i];
+            let location = locations[i];
             $("#locations").append("<p>" + location + "</p>");
         }
 
